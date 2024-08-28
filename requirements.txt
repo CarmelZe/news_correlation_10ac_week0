@@ -6,3 +6,4 @@ plotly
 pre-commit
 seaborn
 textblob
+importlib-metadata
