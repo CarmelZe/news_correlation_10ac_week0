@@ -6,8 +6,4 @@ mlflow.register_model(model_uri, model_name)
 
 # Promote the model to the 'Production' stage
 client = mlflow.tracking.MlflowClient()
-client.transition_model_version_stage(
-    name=model_name,
-    version=1,
-    stage="Production"
-)
+client.transition_model_version_stage(name=model_name, version=1, stage="Production")

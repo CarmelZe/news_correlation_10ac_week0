@@ -4,10 +4,13 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.datasets import load_iris
 from sklearn.model_selection import train_test_split
 
+
 def train_and_log_model():
     # Load the dataset
     iris = load_iris()
-    X_train, X_test, y_train, y_test = train_test_split(iris.data, iris.target, test_size=0.2, random_state=42)
+    X_train, X_test, y_train, y_test = train_test_split(
+        iris.data, iris.target, test_size=0.2, random_state=42
+    )
 
     # Start an MLflow run
     with mlflow.start_run():
@@ -30,6 +33,7 @@ def train_and_log_model():
 
     # Print the run ID for reference
     print(f"Model saved in run: {mlflow.active_run().info.run_uuid}")
+
 
 if __name__ == "__main__":
     train_and_log_model()
