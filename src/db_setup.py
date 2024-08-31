@@ -1,8 +1,9 @@
 import psycopg2
 from config import config
 
+
 def create_tables():
-    """ create tables in the PostgreSQL database"""
+    """create tables in the PostgreSQL database"""
     commands = (
         """
         CREATE TABLE IF NOT EXISTS sources (
@@ -35,7 +36,7 @@ def create_tables():
             event_id SERIAL PRIMARY KEY,
             event_name VARCHAR(255)
         )
-        """
+        """,
     )
     conn = None
     try:
@@ -52,5 +53,6 @@ def create_tables():
         if conn is not None:
             conn.close()
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     create_tables()
